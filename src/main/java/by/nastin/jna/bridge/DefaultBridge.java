@@ -1,4 +1,4 @@
-package by.nastin.jna.lib;
+package by.nastin.jna.bridge;
 
 import com.sun.jna.NativeLibrary;
 import com.sun.jna.ptr.FloatByReference;
@@ -15,5 +15,10 @@ public class DefaultBridge implements Bridge {
     FloatByReference r = new FloatByReference(0);
     bridgeDLL.multiply(a, b, r);
     return r.getValue();
+  }
+
+  @Override
+  public State.ByReference handleState(State.ByReference state) {
+    return bridgeDLL.handleState(state);
   }
 }
