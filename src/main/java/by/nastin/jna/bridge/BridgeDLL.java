@@ -11,4 +11,6 @@ public interface BridgeDLL extends Library {
   void multiply(float a, float b, FloatByReference result);
 
   State.ByReference handleState(State.ByReference state);
+
+  void logic();
 }

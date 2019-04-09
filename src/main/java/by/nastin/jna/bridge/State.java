@@ -7,39 +7,40 @@ import java.util.List;
 
 public class State extends Structure {
 
-  public static class ByReference extends State implements Structure.ByReference {}
-  
-  //todo to private
-  public int id;
-  public int value;
+    public static class ByReference extends State implements Structure.ByReference {
+    }
 
-  @Override
-  protected List<String> getFieldOrder() {
-    return Arrays.asList("id", "value");
-  }
+    //todo to private
+    public int id;
+    public int value;
 
-  public int getId() {
-    return id;
-  }
+    @Override
+    protected List<String> getFieldOrder() {
+        return Arrays.asList("id", "value");
+    }
 
-  public void setId(int id) {
-    this.id = id;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public int getValue() {
-    return value;
-  }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-  public void setValue(int value) {
-    this.value = value;
-  }
+    public int getValue() {
+        return value;
+    }
 
-  @Override
-  public String toString() {
-    final StringBuilder sb = new StringBuilder("State{");
-    sb.append("id=").append(id);
-    sb.append(", value=").append(value);
-    sb.append('}');
-    return sb.toString();
-  }
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("State{");
+        sb.append("id=").append(id);
+        sb.append(", value=").append(value);
+        sb.append('}');
+        return sb.toString();
+    }
 }

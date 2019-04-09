@@ -6,19 +6,21 @@ import by.nastin.jna.bridge.State;
 
 public class Main {
 
-  public static void main(String[] args) {
+    public static void main(String[] args) {
 
-    Bridge bridge = new DefaultBridge();
+        Bridge bridge = new DefaultBridge();
 
-    System.out.println("Bridge calling multiply ()...");
-    float r = bridge.multiply(3.1f, 3f);
-    System.out.println("Bridge r: " + r);
+        System.out.println("Bridge calling multiply ()...");
+        float r = bridge.multiply(3.1f, 3f);
+        System.out.println("Bridge r: " + r);
 
-    State.ByReference state = new State.ByReference();
-    state.setId(1);
-    state.setValue(2);
-    State.ByReference resultState = bridge.handleState(state);
+        State.ByReference state = new State.ByReference();
+        state.setId(1);
+        state.setValue(2);
+        State.ByReference resultState = bridge.handleState(state);
 
-    System.out.println("Result State: " + resultState);
-  }
+        System.out.println("Result State: " + resultState);
+
+        bridge.logic();
+    }
 }
